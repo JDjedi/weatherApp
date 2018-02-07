@@ -1,0 +1,42 @@
+<head>
+  <title class="col-12">weatherapp</title>
+</head>
+
+<body>
+  
+  <div class="10">
+    <h1>Welcome to the Weather App!</h1>
+    {{> counterButton}}
+    <h2>Here is todays weather update!</h2>
+    {{> weatherAppData}}
+    
+  </div>
+  <div class="2">
+  </div>
+
+</body>
+
+<template name="counterButton">
+  <button>Click Me</button>
+  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="weatherAppData">
+  <p>Query the location for the weather.</p>
+  <p>State:</p>
+  <input id="state" name="state" type="text" />
+  <p>City:</p>
+  <input id="city" name="city" type="text" />
+  <button class="find-weather">Find out the weather!</button>
+  {{#with location}}
+    <!-- if location has an error property, display it -->
+    {{#if error}}
+      <p>There was an error: {{error.errorType}} {{error.message}}!</p>
+    {{else}}
+      <p>The Location is: {{location.current_observation.display_location.full}}</p>
+      <p>The Temperature is: {{location.current_observation.feelslike_f}}</p>
+    {{/if}} 
+  {{/with}}
+</template>
+
+
