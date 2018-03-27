@@ -13,8 +13,8 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
   <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 </head>
-<body>
 
+<body>
 <!-- Header -->
   <div id="header">
     <div class="container"> 
@@ -33,17 +33,15 @@
       <section>
         <header id="header-style">
           <h2>Welcome to the Weather App!</h2>
-          <span class="byline">Type in the city and state you'd like to see the weather in.</span>
+          
         </header>
         <div id="weather-app-template">
-          <!-- {{> counterButton}} -->
           {{> weatherAppData}}
         </div>          
       </section>
     </div>
   </div>
 <!-- /Main -->
-
 
 <!-- Footer -->
   <div id="footer">
@@ -61,30 +59,52 @@
 <!-- Copyright -->
   <div id="copyright">
     <div class="container">
-      Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+      Design: <a href="http://templated.co">TEMPLATED</a> Created by: <a href="https://github.com/JDjedi">Jonathan Diaz</a> 
     </div>
   </div>
 </body>
 
 <template name="weatherAppData">
-  <p>State:</p>
-  <input id="state" name="state" type="text" />
-  <p>City:</p>
-  <input id="city" name="city" type="text" />
-  <br>
-  <br>
-  <button class="find-weather">Find out the weather!</button>
-  {{#with location}}
-    <!-- if location has an error property, display it -->
-    {{#if error}}
-      <p>There was an error: {{error.errorType}} {{error.message}}!</p>
-    {{else}}
-      <p>The Location is: {{location.current_observation.display_location.full}}</p>
-      <p>The Temperature is: {{location.current_observation.feelslike_f}}</p>
-      <p>The Conditions are: {{location.current_observation.weather}}</p>
-    {{/if}} 
-  {{/with}}
+
+  {{#if toggleMenu}}
+    <div class="weatherAppDataDisplayField">
+      {{#with location}}
+        <!-- if location has an error property, display it -->
+        {{#if error}}
+          <p>There was an error: {{error.errorType}} {{error.message}}!</p>
+        {{else}}
+          <p>The Location is: {{location.current_observation.display_location.full}}</p>
+          <p>The Temperature is: {{location.current_observation.feelslike_f}}</p>
+          <p>The Conditions are: {{location.current_observation.weather}}</p>
+        {{/if}} 
+      {{/with}}
+    </div>
+    <button class="toggle-menu">See another location!</button>
+  {{else}}
+    <span class="byline">Type in the city and state you'd like to see the weather in.</span>
+    <div class="weatherAppDataInputField">
+      <p>State:</p>
+      <input id="state" name="state" type="text" />
+      <p>City:</p>
+      <input id="city" name="city" type="text" />
+      <br>
+      <br>
+      <button class="find-weather">Find out the weather!</button>
+    </div>
+  {{/if}}
 </template>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -18,7 +18,7 @@
 	{
 		margin: 0;
 		padding: 0;
-		background: #161616;
+		background: rgb(0, 91, 140);
 	}
 
 	body,input,textarea,select
@@ -61,7 +61,7 @@
 	a
 	{
 		text-decoration: none;
-		color: #80BA8E;
+		color: rgb(245, 245, 220);
 	}
 	
 	a:hover
@@ -736,47 +736,6 @@
 		.fa-cubes:before{content:"\f1b3"}
 
 /*********************************************************************************/
-/* Social Icon Styles                                                            */
-/*********************************************************************************/
-
-	ul.contact
-	{
-		padding: 1.5em 0 0 0;
-		list-style: none;
-		cursor: default;
-	}
-	
-	ul.contact li
-	{
-		display: inline-block;
-		margin: 0 1em;
-	}
-	
-	ul.contact li span
-	{
-		display: none;
-		margin: 0;
-		padding: 0;
-	}
-	
-	ul.contact li a
-	{
-		color: inherit;
-		font-size: 1.75em;
-		display: inline-block;
-		-moz-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-		-webkit-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-		-o-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-		-ms-transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-		transition: color 0.35s ease-in-out, background-color 0.35s ease-in-out;
-	}
-	
-	ul.contact li a:hover
-	{
-		color: #fff;
-	}
-
-/*********************************************************************************/
 /* Header                                                                        */
 /*********************************************************************************/
 
@@ -798,7 +757,7 @@
 			top: 0;
 			width: 100%;
 			height: 100%;
-			background: rgb(0, 91, 140);
+			/*background: rgb(0, 91, 140);*/
 		}
 
 /*********************************************************************************/
@@ -938,7 +897,7 @@
 	
 	#footer header .byline
 	{
-		color: rgba(255,255,255,.2);
+		color: rgb(245, 245, 220);
 	}
 
 /*********************************************************************************/
@@ -957,13 +916,13 @@
 		padding: 3em 0em;
 		border-top: 1px solid;
 		border-color: rgba(255,255,255,.05);
-		color:  rgba(255,255,255,.1);
+		color: rgb(245, 245, 220);
 	}
 	
 	#copyright a
 	{
 		text-decoration: none;
-		color:  rgba(255,255,255,.2);
+		color: rgb(219, 219, 245);
 	}
 	
 /*********************************************************************************/
@@ -992,4 +951,47 @@
 	{
 		margin-top: 1.5em;
 	}
+
+/*********************************************************************************/
+/* Button                                                                        */
+/*********************************************************************************/
+
+.find-weather {
+  -webkit-border-radius: 41;
+  -moz-border-radius: 41;
+  border-radius: 41px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #009400;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+}
+
+.find-weather:hover {
+  background: #0cad00;
+  text-decoration: none;
+}
+
+.toggle-menu {
+  -webkit-border-radius: 41;
+  -moz-border-radius: 41;
+  border-radius: 41px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  background: #009400;
+  padding: 5px 20px 5px 20px;
+  text-decoration: none;
+}
+
+.toggle-menu:hover {
+  background: #0cad00;
+  text-decoration: none;
+}
+
+
+
+
+
 
