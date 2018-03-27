@@ -783,7 +783,7 @@
 	#header
 	{
 		position: relative;
-		background: url(../images/header.jpg) no-repeat bottom center;
+		/*background: url(../images/header.jpg) no-repeat bottom center;*/
 		background-attachment: fixed;
 		background-size: cover;
 		text-align: center;
@@ -798,7 +798,7 @@
 			top: 0;
 			width: 100%;
 			height: 100%;
-			background: rgba(64,64,64,0.125);
+			background: rgb(0, 91, 140);
 		}
 
 /*********************************************************************************/
@@ -993,42 +993,3 @@
 		margin-top: 1.5em;
 	}
 
-/*********************************************************************************/
-/* Tweet                                                                         */
-/*********************************************************************************/
-	
-	#tweet
-	{
-		position: relative;
-		text-align: center;
-		background: url(../images/header.jpg) no-repeat center center;
-		background-attachment: fixed;
-		background-size: cover;
-	}
-
-		#tweet:before
-		{
-			content: '';
-			position: absolute;
-			left: 0;
-			top: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(64,64,64,0.5);
-		}
-	
-		#tweet section
-		{
-			border-top: 1px solid;
-			border-bottom: 1px solid;
-			border-color: rgba(255,255,255,.1);
-		}
-
-		#tweet blockquote
-		{
-			position: relative;
-			border: none;
-			margin: 0;
-			font-weight: 300;
-			color: rgba(255,255,255,.6);
-		}	
