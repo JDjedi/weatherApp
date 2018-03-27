@@ -6,7 +6,7 @@
 -->
 
 <head>
-  <title>Weather App by JD</title>
+  <title>Arda by JD</title>
   <meta http-equiv="content-type" content="text/html; charset=utf-8" />
   <meta name="description" content="" />
   <meta name="keywords" content="" />
@@ -20,8 +20,8 @@
     <div class="container"> 
       <!-- Logo -->
       <div id="logo">
-        <h1><a href="#">Weather App</a></h1>
-        <span class="tag">By Jonathan Diaz</span>
+        <h1 id="logo"><a href="#">Arda</a></h1>
+<!--         <span class="tag">By Jonathan Diaz</span> -->
       </div>
     </div>
   </div>
@@ -32,7 +32,7 @@
     <div id="content" class="container">
       <section>
         <header id="header-style">
-          <h2>Welcome to the Weather App!</h2>
+          <h2>Welcome to Arda, your online Weather App!</h2>
           
         </header>
         <div id="weather-app-template">
@@ -49,7 +49,7 @@
       <section>
         <header>
           <h2>Get in touch</h2>
-          <span class="byline">Shoot me an email if you like the site!</span>
+          <a href="https://github.com/JDjedi">Jonathan Diaz</a>
         </header>
       </section>
     </div>
@@ -59,7 +59,7 @@
 <!-- Copyright -->
   <div id="copyright">
     <div class="container">
-      Design: <a href="http://templated.co">TEMPLATED</a> Created by: <a href="https://github.com/JDjedi">Jonathan Diaz</a> 
+      Design: <a href="http://templated.co">TEMPLATED</a> Created by: Jonathan Diaz
     </div>
   </div>
 </body>
@@ -67,7 +67,9 @@
 <template name="weatherAppData">
 
   {{#if toggleMenu}}
+
     <div class="weatherAppDataDisplayField">
+
       {{#with location}}
         <!-- if location has an error property, display it -->
         {{#if error}}
@@ -79,9 +81,12 @@
         {{/if}} 
       {{/with}}
     </div>
+
     <button class="toggle-menu">See another location!</button>
   {{else}}
+
     <span class="byline">Type in the city and state you'd like to see the weather in.</span>
+
     <div class="weatherAppDataInputField">
       <p>State:</p>
       <input id="state" name="state" type="text" />
