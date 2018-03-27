@@ -1,32 +1,78 @@
+
+<!--
+  Linear by TEMPLATED
+    templated.co @templatedco
+    Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+
 <head>
-  <title class="col-12">weatherapp</title>
+  <title>Weather App by JD</title>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
+  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
 </head>
-
 <body>
-  
-  <div class="10">
-    <h1>Welcome to the Weather App!</h1>
-    {{> counterButton}}
-    <h2>Here is todays weather update!</h2>
-    {{> weatherAppData}}
-    
-  </div>
-  <div class="2">
-  </div>
 
+<!-- Header -->
+  <div id="header">
+    <div class="container"> 
+      <!-- Logo -->
+      <div id="logo">
+        <h1><a href="#">Weather App</a></h1>
+        <span class="tag">By Jonathan Diaz</span>
+      </div>
+    </div>
+  </div>
+<!-- Header --> 
+
+<!-- Main -->
+  <div id="main">
+    <div id="content" class="container">
+      <section>
+        <header id="header-style">
+          <h2>Welcome to the Weather App!</h2>
+          <span class="byline">Type in the city and state you'd like to see the weather in.</span>
+        </header>
+        <div id="weather-app-template">
+          <!-- {{> counterButton}} -->
+          {{> weatherAppData}}
+        </div>          
+      </section>
+    </div>
+  </div>
+<!-- /Main -->
+
+
+<!-- Footer -->
+  <div id="footer">
+    <div class="container">
+      <section>
+        <header>
+          <h2>Get in touch</h2>
+          <span class="byline">Shoot me an email if you like the site!</span>
+        </header>
+      </section>
+    </div>
+  </div>
+<!-- /Footer -->
+
+<!-- Copyright -->
+  <div id="copyright">
+    <div class="container">
+      Design: <a href="http://templated.co">TEMPLATED</a> Images: <a href="http://unsplash.com">Unsplash</a> (<a href="http://unsplash.com/cc0">CC0</a>)
+    </div>
+  </div>
 </body>
 
-<template name="counterButton">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
-</template>
-
 <template name="weatherAppData">
-  <p>Query the location for the weather.</p>
   <p>State:</p>
   <input id="state" name="state" type="text" />
   <p>City:</p>
   <input id="city" name="city" type="text" />
+  <br>
+  <br>
   <button class="find-weather">Find out the weather!</button>
   {{#with location}}
     <!-- if location has an error property, display it -->
@@ -35,9 +81,11 @@
     {{else}}
       <p>The Location is: {{location.current_observation.display_location.full}}</p>
       <p>The Temperature is: {{location.current_observation.feelslike_f}}</p>
-      <p>The Weather is like: {{location.current_observation.weather}}</p>
+      <p>The Conditions are: {{location.current_observation.weather}}</p>
     {{/if}} 
   {{/with}}
 </template>
+
+
 
 

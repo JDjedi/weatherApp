@@ -8,23 +8,23 @@ import './main.html';
 Meteor.subscribe('weather');
 
 if (Meteor.isClient) {
-	Template.counterButton.onCreated(function helloOnCreated() {
-	  // counter starts at 0
-	  this.counter = new ReactiveVar(0);
-	});
+	// Template.counterButton.onCreated(function helloOnCreated() {
+	//   // counter starts at 0
+	//   this.counter = new ReactiveVar(0);
+	// });
 
-	Template.counterButton.helpers({
-	  counter() {
-	    return Template.instance().counter.get();
-	  }
-	});
+	// Template.counterButton.helpers({
+	//   counter() {
+	//     return Template.instance().counter.get();
+	//   }
+	// });
 
-	Template.counterButton.events({
-	  'click button'(event, instance) {
-	    // increment the counter when button is clicked
-	    instance.counter.set(instance.counter.get() + 1);
-	  }
-	});
+	// Template.counterButton.events({
+	//   'click button'(event, instance) {
+	//     // increment the counter when button is clicked
+	//     instance.counter.set(instance.counter.get() + 1);
+	//   }
+	// });
 
 	Template.weatherAppData.helpers({
 		location: function() {
@@ -41,7 +41,7 @@ if (Meteor.isClient) {
 		  		Session.set('location', {error: err});
 		  	} else {
 		  		Session.set('location', results);
-		  		console.log(results);
+		  		// console.log(results);
 		  		return results
 		  	}
 		  });
