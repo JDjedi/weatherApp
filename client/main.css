@@ -19,6 +19,7 @@
 		margin: 0;
 		padding: 0;
 		background: rgb(0, 91, 140);
+		background-repeat: no-repeat;
 	}
 
 	body,input,textarea,select
