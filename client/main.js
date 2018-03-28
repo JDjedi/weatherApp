@@ -35,9 +35,20 @@ if (Meteor.isClient) {
 		  	} else {
 		  		Session.set('location', results);
 
-		  		if (results.current_observation.weather === "Overcast") {
-		  			console.log("Success!");
-		  			//need to grab the css element "background-image:" and change it to the image in resources/images/image.jpg
+		  		if (results.current_observation.weather === "Rain") {
+		  			$("body").css({"background-image": "url('https://www.imgbase.info/images/safe-wallpapers/photography/water/43917_water_rain.jpg')"});
+		  		} else if (results.current_observation.weather === "Mostly Cloudy") {
+		  			$("body").css({"background-image": "url('https://wallpaperstock.net/storm-clouds-wallpapers_34797_1920x1080.jpg')"});
+		  		} else if (results.current_observation.weather === "Overcast") {
+		  			$("body").css({"background-image": "url('https://wallpaperscraft.com/image/mountains_grass_sky_overcast_clouds_111548_1920x1080.jpg')"});
+		  		} else if (results.current_observation.weather === "Thunderstorm") {
+		  			$("body").css({"background-image": "url('http://natbg.com/wp-content/uploads/2016/06/nature-lightning-storm-mountains-rain-high-quality-picture.jpg')"});
+		  		} else if (results.current_observation.weather === "Clear") {
+		  			$("body").css({"background-image": "url('http://wpnature.com/wp-content/uploads/2016/08/field-sunny-day-blue-light-white-sky-trees-nature-sun-living-country-clouds-green-landscape-full-hd-wallpaper.jpg')"});
+		  		} else if (results.current_observation.weather === "Partly Cloudy") {
+		  			$("body").css({"background-image": "url('https://wallpaperscraft.com/image/clouds_sun_sunset_colors_height_air_sky_48024_1920x1080.jpg')"});
+		  		} else {
+		  			return results
 		  		}
 		  		return results
 		  	}
@@ -46,6 +57,7 @@ if (Meteor.isClient) {
 
 		'click .toggle-menu': function() {
 			Session.set('toggleMenu', false);
+				$("body").css({"background-image": ""});
 		}
 	});
 }
