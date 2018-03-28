@@ -34,6 +34,11 @@ if (Meteor.isClient) {
 		  		Session.set('location', {error: err});
 		  	} else {
 		  		Session.set('location', results);
+
+		  		if (results.current_observation.weather === "Overcast") {
+		  			console.log("Success!");
+		  			//need to grab the css element "background-image:" and change it to the image in resources/images/image.jpg
+		  		}
 		  		return results
 		  	}
 		  });
@@ -45,7 +50,7 @@ if (Meteor.isClient) {
 	});
 }
 
-
+//console.log();
 
 
 
