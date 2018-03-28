@@ -40,7 +40,7 @@ if (Meteor.isClient) {
 		  		} else if (results.current_observation.weather === "Mostly Cloudy") {
 		  			$("body").css({"background-image": "url('https://wallpaperstock.net/storm-clouds-wallpapers_34797_1920x1080.jpg')"});
 		  		} else if (results.current_observation.weather === "Overcast") {
-		  			$("body").css({"background-image": "url('https://wallpaperscraft.com/image/mountains_grass_sky_overcast_clouds_111548_1920x1080.jpg')"});
+		  			$("body").css({"background-image": "url('http://s1.1zoom.me/b3452/685/Thundercloud_Clouds_Hill_520081_1920x1080.jpg')"});
 		  		} else if (results.current_observation.weather === "Thunderstorm") {
 		  			$("body").css({"background-image": "url('http://natbg.com/wp-content/uploads/2016/06/nature-lightning-storm-mountains-rain-high-quality-picture.jpg')"});
 		  		} else if (results.current_observation.weather === "Clear") {
@@ -63,7 +63,9 @@ if (Meteor.isClient) {
 }
 
 //console.log();
-
+// else if (results.current_observation.weather === "") {
+// 	$("body").css({"background-image": "url('')"});
+// }
 
 
 
