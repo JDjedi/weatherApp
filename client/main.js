@@ -35,6 +35,8 @@ if (Meteor.isClient) {
 		  	} else {
 		  		Session.set('location', results);
 
+		  		$("#main").css({"background-color": "rgba(187, 187, 187, 0.8);"});
+
 		  		if (results.current_observation.weather === "Rain") {
 		  			$("body").css({"background-image": "url('https://www.imgbase.info/images/safe-wallpapers/photography/water/43917_water_rain.jpg')"});
 		  		} else if (results.current_observation.weather === "Mostly Cloudy") {
@@ -67,5 +69,7 @@ if (Meteor.isClient) {
 // 	$("body").css({"background-image": "url('')"});
 // }
 
+// $("#main").css({"background-color": "rgba(187, 187, 187, 0.8);"});
+//
 
 
