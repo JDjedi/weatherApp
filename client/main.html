@@ -11,99 +11,14 @@
   <meta name="description" content="" />
   <meta name="keywords" content="" />
   <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,700,500,900' rel='stylesheet' type='text/css'>
-  <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 </head>
 
 <body>
-<!-- Header -->
-  <div id="header">
-    <div class="container"> 
-      <!-- Logo -->
-      <div id="logo">
-        <h1 id="logo"><a href="#">Arda</a></h1>
-<!--         <span class="tag">By Jonathan Diaz</span> -->
-      </div>
-    </div>
-  </div>
-<!-- Header --> 
-
-<!-- Main -->
-  <div id="main">
-    <div id="content" class="container">
-      <section>
-        <header id="header-style">
-          <h2>Welcome to Arda, your online Weather App!</h2>
-          
-        </header>
-        <div id="weather-app-template">
-          {{> weatherAppData}}
-        </div>          
-      </section>
-    </div>
-  </div>
-<!-- /Main -->
-
-<!-- Footer -->
-  <div id="footer">
-    <div class="container">
-      <section>
-        <header>
-          <h2>Get in touch</h2>
-          <a href="https://github.com/JDjedi">Jonathan Diaz</a>
-        </header>
-      </section>
-    </div>
-  </div>
-<!-- /Footer -->
-
-<!-- Copyright -->
-  <div id="copyright">
-    <div class="container">
-      Design: <a href="http://templated.co">TEMPLATED</a> Created by: Jonathan Diaz
-    </div>
+  <div id="app">
   </div>
 </body>
 
-<template name="weatherAppData">
-
-  {{#if toggleMenu}}
-
-    <div class="weatherAppDataDisplayField">
-
-      {{#with location}}
-        <!-- if location has an error property, display it -->
-        {{#if error}}
-          <p>There was an error: {{error.errorType}} {{error.message}}!</p>
-        {{else}}
-          <div>
-            The Location is: {{location.current_observation.display_location.full}}
-          </div>
-          <div>
-            <p>The Temperature is: {{location.current_observation.feelslike_f}}</p>
-          </div>
-          <div>
-            <p>The Conditions are: <output id="condition-output">{{location.current_observation.weather}}</output> </p>
-          </div>
-        {{/if}} 
-      {{/with}}
-    </div>
-
-    <button class="toggle-menu">See another location!</button>
-  {{else}}
-
-    <span class="byline">Type in the city and state you'd like to see the weather in or just the zip. Or, if international, type in the name of the country and the city you would like to see.</span>
-    <div class="weatherAppDataInputField">
-      <p>U.S. State or other Country:</p>
-      <input id="state" name="state" type="text" />
-      <p>City or Zip:</p>
-      <input id="city" name="city" type="text" />
-      <br>
-      <br>
-      <button class="find-weather">Find out the weather!</button>
-    </div>
-  {{/if}}
-</template>
 
 
 
