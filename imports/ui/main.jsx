@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Weather } from '../api/weather';
 import Header from './header';
 import Footer from './footer';
 import Copyright from './copyright';
@@ -17,16 +18,14 @@ export default class Main extends React.Component {
 	handleSubmit(e) {
 		e.preventDefault(); 
 
-		let query = this.refs.query.value.trim();
-		console.log(query);
+		let queryZip = this.refs.query.value.trim();
 
-		// this.props.loginWithPassword({email}, password, (err) => {
-		// 	if (err) {
-		// 		this.setState({error: "Unable to login, check email and or password."})
-		// 	} else {
-		// 		this.setState({error: ''})
-		// 	}
-		// })
+		Meteor.call('checkWeather.query', queryZip, (err, res) => {
+			if (err) {
+				this.setState({error: err.reason})
+			}
+		})
+		
 	}
 
 	render() {
@@ -39,7 +38,7 @@ export default class Main extends React.Component {
 				    </div>
 					<form className="form" onSubmit={this.handleSubmit.bind(this)} noValidate className="boxed-view__form">
 						<input type="query" ref="query" name="query" placeholder="query"/> 
-						<button className="button">Login</button>
+						<button className="button">Whats it like outside?</button>
 					</form>       
 				</div>
 				<Footer />

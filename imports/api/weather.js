@@ -1,5 +1,7 @@
-import { Mongo } from 'meteor/mongo';
+
 import { Meteor } from 'meteor/meteor';
+import { Mongo } from 'meteor/mongo';
+import { HTTP } from 'meteor/http'
 
 export const Weather = new Mongo.Collection("weather");
 
@@ -8,32 +10,26 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-	checkWeather: function(stateQuery, cityQuery) {
+	'checkWeather.query'(zip) {
 		this.unblock();
-		var apiURL =
-			"http://api.wunderground.com/api/bb60b5fbf63bb327/conditions/q/" +
-			stateQuery +
-			"/" +
-			cityQuery +
-			".json";
-		var apiCall = function(apiURL, callback) {
-			try {
-				var reply = HTTP.get(apiURL).data;
-				callback(null, reply);
-			} catch (error) {
-				if (error.response) {
-					var errorCode = error.response.data.code;
-					var errorMessage = error.response.data.message;
-				} else {
-					var errorCode = 500;
-					var errorMessage = "Cannot access the API";
-				}
-				var theError = new Meteor.Error(errorCode, errorMessage);
-				callback(theError, null);
-			}
-		};
-
-		var response = Meteor.wrapAsync(apiCall)(apiURL);
-		return response;
+		try {
+		 	const result = HTTP.call(
+		 		"GET",
+				"http://api.openweathermap.org/data/2.5/weather?q=London,uk&appid=e6d445b87577a86118b790cb4543a748",
+	 			{},
+	 			function(error, response){
+				 	if ( error ) {
+				    	console.log(error);
+				  	} else {
+				    	console.log(response);
+				    	return response;
+					}	
+	 			}
+			);
+		  
+		} catch (e) {
+		  // Got a network error, timeout, or HTTP error in the 400 or 500 range.
+		  return false;
+		}
 	}
 });

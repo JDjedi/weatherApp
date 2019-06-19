@@ -8,8 +8,8 @@ export default class Header extends React.Component{
 
 	render() {
 		return (
-			<div id="copyright">
-				<div class="container">
+			<div className="copyright">
+				<div className="container">
 				  Design: <a href="http://templated.co">TEMPLATED</a> Created by: Jonathan Diaz
 				</div>
 			</div>

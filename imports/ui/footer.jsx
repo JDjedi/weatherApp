@@ -8,8 +8,8 @@ export default class Header extends React.Component{
 
 	render() {
 		return (
-			<div id="footer">
-				<div class="container">
+			<div className="footer">
+				<div className="container">
 				  <section>
 				    <header>
 				      <h2>Get in touch</h2>

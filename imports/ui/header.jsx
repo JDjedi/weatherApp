@@ -7,10 +7,10 @@ export default class Header extends React.Component{
 
 	render() {
 		return (
-			<div id="header">
-				<div class="container"> 
-				  <div id="logo">
-				    <h1 id="logo"><a href="#">Arda</a></h1>
+			<div className="header">
+				<div className="container"> 
+				  <div className="logo">
+				    <h1 className="logo"><a href="#">Arda</a></h1>
 				  </div>
 				</div>
 			</div>
