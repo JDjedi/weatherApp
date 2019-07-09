@@ -41,10 +41,12 @@ export default class Main extends React.Component {
 
 	render() {
 		return (
-			<div className="main">
+			<div>
+
 				<Header />
-				<div className="content" className="container">
-				    <div className="header-style">
+
+				<div className="main">
+				    <div>
 				      <h2>Welcome to Arda, your online Weather App!</h2>
 				    </div>
 				    {	
@@ -68,8 +70,9 @@ export default class Main extends React.Component {
 						}
 					</div>
 				</div>
+
 				<Footer />
-				<Copyright />
+
 			</div>
 		)
 	}
