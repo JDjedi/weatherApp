@@ -5,8 +5,6 @@ import { Weather } from '../api/weather';
 
 import Header from './header';
 import Footer from './footer';
-import Copyright from './copyright';
-
 
 export default class Main extends React.Component {
 
@@ -41,10 +39,8 @@ export default class Main extends React.Component {
 
 	render() {
 		return (
-			<div>
-
+			<div className="wrapper">
 				<Header />
-
 				<div className="main">
 				    <div>
 				      <h2>Welcome to Arda, your online Weather App!</h2>
@@ -70,9 +66,7 @@ export default class Main extends React.Component {
 						}
 					</div>
 				</div>
-
 				<Footer />
-
 			</div>
 		)
 	}
